@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMMUN 2026 | IV Modelo de las Naciones Unidas</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ammun: {
+              darkest: '#061033',
+              navy: '#1A2342',
+              slate: '#2C344F',
+              pizzarra: '#3B526A',
+              steel: '#53586B',
+              soft: '#8BA2B5',
+              ice: '#E2E8F0',
+              bg: '#0B132B'
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #061033;
+      color: #E2E8F0;
+      overflow-x: hidden;
+    }
+    .font-serif-title {
+      font-family: 'Cinzel', serif;
+    }
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 20%, #1A2342 0%, #061033 70%, #03081C 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(139, 162, 181, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .glass-nav {
+      background: rgba(6, 16, 51, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(139, 162, 181, 0.15);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061033;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3B526A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8BA2B5;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-ammun-soft selection:text-ammun-darkest">
+
+  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#inicio" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-full bg-slate-900/80 p-1.5 border border-ammun-soft/30 flex items-center justify-center shadow-lg group-hover:border-ammun-soft/80 transition">
+          <!-- Vector AMMUN Logo SVG -->
+          <svg viewBox="0 0 200 200" class="w-full h-full text-ammun-soft fill-current">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#8BA2B5" stroke-width="6" opacity="0.4"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#8BA2B5" stroke-width="4" stroke-dasharray="6,6"/>
+            <!-- World Globe Grid -->
+            <ellipse cx="100" cy="100" rx="65" ry="28" fill="none" stroke="#8BA2B5" stroke-width="3"/>
+            <ellipse cx="100" cy="100" rx="28" ry="65" fill="none" stroke="#8BA2B5" stroke-width="3"/>
+            <line x1="35" y1="100" x2="165" y2="100" stroke="#8BA2B5" stroke-width="3"/>
+            <line x1="100" y1="35" x2="100" y2="165" stroke="#8BA2B5" stroke-width="3"/>
+            <!-- Laurel Wreath Leaves -->
+            <path d="M 45,140 C 35,110 40,75 65,50 C 60,65 65,85 80,100 C 65,115 50,130 45,140 Z" fill="#E2E8F0" opacity="0.85"/>
+            <path d="M 155,140 C 165,110 160,75 135,50 C 140,65 135,85 120,100 C 135,115 150,130 155,140 Z" fill="#E2E8F0" opacity="0.85"/>
+            <!-- Star Center -->
+            <polygon points="100,78 104,90 116,90 106,97 110,108 100,101 90,108 94,97 84,90 96,90" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif-title font-bold text-lg tracking-wider text-white block leading-none">AMMUN 2026</span>
+          <span class="text-[9px] text-ammun-soft font-semibold tracking-widest uppercase block mt-1">I.E. Alberto Mendoza Mayor</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#inicio" class="text-slate-300 hover:text-white transition">Inicio</a>
+        <a href="#nosotros" class="text-slate-300 hover:text-white transition">Nosotros</a>
+        <a href="#comites" class="text-slate-300 hover:text-white transition">Comités</a>
+        <a href="#secretariado" class="text-slate-300 hover:text-white transition">Secretariado</a>
+        <a href="#galeria" class="text-slate-300 hover:text-white transition">Galería</a>
+        <a href="#inscripciones" class="px-5 py-2.5 rounded-full bg-ammun-soft/20 border border-ammun-soft/50 text-white hover:bg-ammun-soft hover:text-ammun-darkest font-semibold transition shadow-lg backdrop-blur-sm">
+          Inscribirse
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Abrir Menú">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="hidden md:hidden bg-ammun-darkest/95 border-b border-ammun-pizzarra/30 px-6 py-6 space-y-4">
+      <a href="#inicio" class="block text-slate-300 hover:text-white text-base py-1">Inicio</a>
+      <a href="#nosotros" class="block text-slate-300 hover:text-white text-base py-1">Nosotros</a>
+      <a href="#comites" class="block text-slate-300 hover:text-white text-base py-1">Comités</a>
+      <a href="#secretariado" class="block text-slate-300 hover:text-white text-base py-1">Secretariado</a>
+      <a href="#galeria" class="block text-slate-300 hover:text-white text-base py-1">Galería</a>
+      <a href="#inscripciones" class="block w-full text-center py-3 rounded-xl bg-ammun-soft text-ammun-darkest font-bold mt-2">Inscribirse</a>
+    </div>
+  </nav>
+
+  <section id="inicio" class="relative min-h-screen hero-gradient pt-32 pb-20 flex items-center justify-center text-center px-4 overflow-hidden">
+    
+    <!-- Background Animated Geometric Particles -->
+    <div class="absolute inset-0 pointer-events-none opacity-20">
+      <div class="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-ammun-soft blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-ammun-pizzarra blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto z-10">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-ammun-soft/30 text-ammun-soft text-xs font-semibold uppercase tracking-widest mb-8 backdrop-blur-md">
+        <i class="fa-solid fa-graduation-cap"></i> IV Edición | Modelo Institucional
+      </div>
+
+      <!-- Main Emblem SVG Logo -->
+      <div class="mb-10 flex justify-center">
+        <div class="relative p-6 glass-card rounded-full w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center border border-ammun-soft/40 shadow-2xl">
+          <svg viewBox="0 0 300 300" class="w-full h-full text-white">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#8BA2B5" />
+              </linearGradient>
+            </defs>
+            <!-- Outer Ring -->
+            <circle cx="150" cy="150" r="140" fill="none" stroke="url(#logoGrad)" stroke-width="3" opacity="0.6"/>
+            <circle cx="150" cy="150" r="128" fill="none" stroke="#8BA2B5" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <!-- World Lines -->
+            <circle cx="150" cy="150" r="95" fill="none" stroke="url(#logoGrad)" stroke-width="2.5"/>
+            <ellipse cx="150" cy="150" rx="95" ry="40" fill="none" stroke="#8BA2B5" stroke-width="2"/>
+            <ellipse cx="150" cy="150" rx="40" ry="95" fill="none" stroke="#8BA2B5" stroke-width="2"/>
+            <line x1="55" y1="150" x2="245" y2="150" stroke="#8BA2B5" stroke-width="2"/>
+            <line x1="150" y1="55" x2="150" y2="245" stroke="#8BA2B5" stroke-width="2"/>
+            <!-- Laurel Wreath Vectors -->
+            <path d="M 65,210 C 45,160 55,100 95,65 C 88,88 95,120 118,140 C 95,160 75,185 65,210 Z" fill="url(#logoGrad)" opacity="0.9"/>
+            <path d="M 235,210 C 255,160 245,100 205,65 C 212,88 205,120 182,140 C 205,160 225,185 235,210 Z" fill="url(#logoGrad)" opacity="0.9"/>
+            <!-- Center Emblem Badge -->
+            <circle cx="150" cy="150" r="28" fill="#061033" stroke="url(#logoGrad)" stroke-width="2"/>
+            <path d="M 150,132 L 158,158 L 137,143 L 163,143 L 142,158 Z" fill="#FFFFFF"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif-title text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 text-white">
+        AMMUN 2026
+      </h1>
+      
+      <p class="font-serif-title text-xl sm:text-2xl text-ammun-soft font-medium tracking-wide mb-6">
+        IV Modelo de las Naciones Unidas
+      </p>
+
+      <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg font-light leading-relaxed mb-10">
+        Un espacio diplomático de alto nivel, rigor académico y negociación transformadora diseñado para los futuros líderes globales de la I.E. Alberto Mendoza Mayor.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#inscripciones" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-ammun-soft hover:bg-white text-ammun-darkest font-extrabold text-base transition duration-300 shadow-xl flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Inscribirme Ahora
+        </a>
+        <a href="#comites" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-white/10 text-white font-semibold text-base transition duration-300 border border-ammun-soft/40 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-sitemap"></i> Explorar Comités
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="nosotros" class="py-24 relative bg-ammun-darkest/60 border-t border-ammun-pizzarra/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-ammun-soft block mb-3">Conócenos</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mb-6">
+            Liderazgo y Diplomacia en la I.E. Alberto Mendoza Mayor
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed mb-4 font-light">
+            El Modelo de las Naciones Unidas (AMMUN) es una plataforma formativa institucional enfocada en el desarrollo del pensamiento crítico, la investigación profunda, la oratoria pública y la resolución pacífica de conflictos geopolíticos.
+          </p>
+          <p class="text-slate-300 text-base leading-relaxed font-light mb-6">
+            En esta cuarta edición, más de 200 delegados debatirán sobre las problemáticas más apremiantes de la agenda global, asumiendo el rol de embajadores diplomáticos ante diversos comités internacionales.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+            <div>
+              <span class="font-serif-title text-3xl font-extrabold text-white block">4ª</span>
+              <span class="text-xs text-ammun-soft uppercase tracking-wider font-semibold">Edición Institucional</span>
+            </div>
+            <div>
+              <span class="font-serif-title text-3xl font-extrabold text-white block">5+</span>
+              <span class="text-xs text-ammun-soft uppercase tracking-wider font-semibold">Comités de Debate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar Cards Grid -->
+        <div class="space-y-4">
+          <div class="p-6 glass-card rounded-2xl border border-white/10 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-xl bg-ammun-pizzarra/40 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-xl shrink-0">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <h3 class="font-serif-title font-bold text-lg text-white mb-1">Excelencia Académica</h3>
+              <p class="text-sm text-slate-300 font-light">Rigor en el estudio de tratados, resoluciones internacionales y el protocolo oficial de la ONU.</p>
+            </div>
+          </div>
+
+          <div class="p-6 glass-card rounded-2xl border border-white/10 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-xl bg-ammun-pizzarra/40 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-xl shrink-0">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div>
+              <h3 class="font-serif-title font-bold text-lg text-white mb-1">Oratoria y Negociación</h3>
+              <p class="text-sm text-slate-300 font-light">Formación de competencias en argumentación convincente, oratoria de impacto y consensos.</p>
+            </div>
+          </div>
+
+          <div class="p-6 glass-card rounded-2xl border border-white/10 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-xl bg-ammun-pizzarra/40 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-xl shrink-0">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <h3 class="font-serif-title font-bold text-lg text-white mb-1">Pensamiento Global</h3>
+              <p class="text-sm text-slate-300 font-light">Comprensión profunda de la geopolítica contemporánea y el compromiso ciudadano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="comites" class="py-24 relative bg-ammun-darkest">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-ammun-soft block mb-2">Órganos de Debate</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mb-4">Comités Académicos</h2>
+        <div class="w-20 h-1 bg-ammun-soft/60 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Committee 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-ammun-pizzarra/30 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-2xl">
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-ammun-soft/10 border border-ammun-soft/30 text-ammun-soft text-xs font-semibold uppercase">Principiantes</span>
+            </div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">Asamblea General (AG)</h3>
+            <p class="text-xs text-ammun-soft uppercase tracking-wider font-semibold mb-4">Idioma: Español</p>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Debate multilateral centrado en el desarrollo sostenible, cooperación internacional y prevención de crisis humanitarias en países emergentes.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-400">
+            <span><i class="fa-solid fa-users mr-1"></i> 40 Delegados</span>
+            <span class="text-ammun-soft font-medium">GUÍA DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Committee 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-ammun-pizzarra/30 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-2xl">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-600 text-slate-300 text-xs font-semibold uppercase">Avanzado</span>
+            </div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">Consejo de Seguridad (CS)</h3>
+            <p class="text-xs text-ammun-soft uppercase tracking-wider font-semibold mb-4">Idioma: Español / Inglés</p>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Gestión e intervención frente a conflictos armados, soberanía territorial y la emisión de resoluciones vinculantes en tiempo real.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-400">
+            <span><i class="fa-solid fa-users mr-1"></i> 15 Delegados</span>
+            <span class="text-ammun-soft font-medium">GUÍA DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Committee 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-ammun-pizzarra/30 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-2xl">
+                <i class="fa-solid fa-venus"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-ammun-soft/10 border border-ammun-soft/30 text-ammun-soft text-xs font-semibold uppercase">Intermedio</span>
+            </div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">ONU Mujeres</h3>
+            <p class="text-xs text-ammun-soft uppercase tracking-wider font-semibold mb-4">Idioma: Español</p>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Promoción de la autonomía económica, garantía de derechos fundamentales y erradicación de brechas sistemáticas de género a nivel global.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-400">
+            <span><i class="fa-solid fa-users mr-1"></i> 30 Delegados</span>
+            <span class="text-ammun-soft font-medium">GUÍA DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Committee 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-ammun-pizzarra/30 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-2xl">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-600 text-slate-300 text-xs font-semibold uppercase">Avanzado</span>
+            </div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">Gabinete Histórico</h3>
+            <p class="text-xs text-ammun-soft uppercase tracking-wider font-semibold mb-4">Idioma: Español</p>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Simulación inmersiva de momentos coyunturales del siglo XX para reevaluar decisiones diplomáticas y redirigir el curso de la historia.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-400">
+            <span><i class="fa-solid fa-users mr-1"></i> 20 Delegados</span>
+            <span class="text-ammun-soft font-medium">GUÍA DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Committee 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-ammun-pizzarra/30 border border-ammun-soft/30 flex items-center justify-center text-ammun-soft text-2xl">
+                <i class="fa-solid fa-newspaper"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-ammun-soft/10 border border-ammun-soft/30 text-ammun-soft text-xs font-semibold uppercase">Todos los Niveles</span>
+            </div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">Comité de Prensa</h3>
+            <p class="text-xs text-ammun-soft uppercase tracking-wider font-semibold mb-4">Idioma: Español</p>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Cobertura objetiva y en tiempo real del modelo, elaboración de boletines internacionales, redacción de artículos y entrevistas exclusivas.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-400">
+            <span><i class="fa-solid fa-users mr-1"></i> 15 Periodistas</span>
+            <span class="text-ammun-soft font-medium">GUÍA DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Committee CTA Card -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-2 border-dashed border-ammun-soft/40 bg-ammun-pizzarra/10">
+          <div>
+            <h3 class="font-serif-title text-xl font-bold text-white mb-2">¿Listo para representar tu nación?</h3>
+            <p class="text-slate-300 text-sm font-light leading-relaxed mb-6">
+              Asegura tu participación completando el registro oficial y selecciona las prioridades de tu preferencia académica.
+            </p>
+          </div>
+          <a href="#inscripciones" class="w-full py-3 rounded-xl bg-ammun-soft hover:bg-white text-ammun-darkest font-bold text-center block transition">
+            Postularme como Delegado
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="secretariado" class="py-24 relative bg-ammun-darkest/80 border-t border-ammun-pizzarra/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-ammun-soft block mb-2">Liderazgo Institucional</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mb-4">Mesa Directiva & Secretariado</h2>
+        <div class="w-20 h-1 bg-ammun-soft/60 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Member 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden text-center p-6 border border-white/10">
+          <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-ammun-soft/40 p-1 mb-4">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Secretaria General" class="w-full h-full object-cover rounded-full">
+          </div>
+          <h3 class="font-serif-title font-bold text-lg text-white mb-1">Secretaría General</h3>
+          <p class="text-xs text-ammun-soft font-semibold uppercase tracking-wider mb-3">Liderazgo Ejecutivo</p>
+          <p class="text-xs text-slate-300 font-light">Coordinación diplomática general y representación oficial del modelo AMMUN 2026.</p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden text-center p-6 border border-white/10">
+          <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-ammun-soft/40 p-1 mb-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Dirección Académica" class="w-full h-full object-cover rounded-full">
+          </div>
+          <h3 class="font-serif-title font-bold text-lg text-white mb-1">Dirección Académica</h3>
+          <p class="text-xs text-ammun-soft font-semibold uppercase tracking-wider mb-3">Rigor y Contenidos</p>
+          <p class="text-xs text-slate-300 font-light">Supervisión de guías de estudio, procedimiento parlamentario y evaluación de resoluciones.</p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden text-center p-6 border border-white/10">
+          <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-ammun-soft/40 p-1 mb-4">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Jefatura de Logística" class="w-full h-full object-cover rounded-full">
+          </div>
+          <h3 class="font-serif-title font-bold text-lg text-white mb-1">Jefatura de Logística</h3>
+          <p class="text-xs text-ammun-soft font-semibold uppercase tracking-wider mb-3">Operaciones</p>
+          <p class="text-xs text-slate-300 font-light">Gestión de recintos, acreditaciones, protocolo institucional y desarrollo del evento.</p>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl overflow-hidden text-center p-6 border border-white/10">
+          <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-ammun-soft/40 p-1 mb-4">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Jefatura de Prensa" class="w-full h-full object-cover rounded-full">
+          </div>
+          <h3 class="font-serif-title font-bold text-lg text-white mb-1">Jefatura de Prensa</h3>
+          <p class="text-xs text-ammun-soft font-semibold uppercase tracking-wider mb-3">Comunicaciones</p>
+          <p class="text-xs text-slate-300 font-light">Estrategia de medios, divulgación institucional y cobertura fotográfica continua.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="galeria" class="py-24 relative bg-ammun-darkest">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-ammun-soft block mb-2">Registro Fotográfico</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mb-4">Galería de Experiencias</h2>
+        <div class="w-20 h-1 bg-ammun-soft/60 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- 9 High Definition Unsplash Direct Photography Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Sesión Plenaria" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Inauguración</span>
+            <p class="text-sm font-semibold text-white">Sesión Plenaria Institucional</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Debates en Comités" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Asamblea General</span>
+            <p class="text-sm font-semibold text-white">Discursos de Apertura de Delegados</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Mesa Directiva" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Mesa de Trabajo</span>
+            <p class="text-sm font-semibold text-white">Evaluación de Proyectos de Resolución</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" alt="Votación" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Consejo de Seguridad</span>
+            <p class="text-sm font-semibold text-white">Procedimiento Formal de Votación</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Intercambio Cultural" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Negociaciones Unofficial</span>
+            <p class="text-sm font-semibold text-white">Lobby de Delegaciones y Alianzas</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Banderas Internacionales" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Representatividad</span>
+            <p class="text-sm font-semibold text-white">Embajadas y Países Miembros</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=800&q=80" alt="Prensa AMMUN" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Comité de Prensa</span>
+            <p class="text-sm font-semibold text-white">Conferencias e Informes Especiales</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Trabajo en Equipo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Comunidad Estudiantil</span>
+            <p class="text-sm font-semibold text-white">Formación de Jóvenes Líderes</p>
+          </div>
+        </div>
+
+        <div class="group relative h-64 rounded-2xl overflow-hidden glass-card border border-white/10">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Clausura" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-ammun-darkest via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] text-ammun-soft uppercase font-bold tracking-widest block">Premiación</span>
+            <p class="text-sm font-semibold text-white">Ceremonia de Clausura y Reconocimientos</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="inscripciones" class="py-24 relative bg-ammun-darkest/90 border-t border-ammun-pizzarra/20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-ammun-soft block mb-2">Formulario de Postulación</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mb-4">Registro Oficial de Delegados</h2>
+        <p class="text-slate-300 text-sm max-w-xl mx-auto font-light">
+          Completa tus datos para postularte como delegado formal en el Modelo de las Naciones Unidas AMMUN 2026.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl relative">
+        <form id="registration-form" onsubmit="handleRegistration(event)" class="space-y-6">
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase font-semibold text-ammun-soft tracking-wider mb-2">Nombre Completo *</label>
+              <input type="text" required placeholder="Ej: Sofía Torres" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ammun-soft text-sm transition">
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-semibold text-ammun-soft tracking-wider mb-2">Correo Electrónico *</label>
+              <input type="email" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ammun-soft text-sm transition">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase font-semibold text-ammun-soft tracking-wider mb-2">Grado / Nivel Académico *</label>
+              <select required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-ammun-soft text-sm transition">
+                <option value="" class="bg-ammun-darkest">Seleccionar Grado</option>
+                <option value="8" class="bg-ammun-darkest">8° Grado</option>
+                <option value="9" class="bg-ammun-darkest">9° Grado</option>
+                <option value="10" class="bg-ammun-darkest">10° Grado</option>
+                <option value="11" class="bg-ammun-darkest">11° Grado</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-semibold text-ammun-soft tracking-wider mb-2">Comité de Preferencia *</label>
+              <select required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-ammun-soft text-sm transition">
+                <option value="" class="bg-ammun-darkest">Seleccionar Comité</option>
+                <option value="AG" class="bg-ammun-darkest">Asamblea General (AG)</option>
+                <option value="CS" class="bg-ammun-darkest">Consejo de Seguridad (CS)</option>
+                <option value="ONU" class="bg-ammun-darkest">ONU Mujeres</option>
+                <option value="GH" class="bg-ammun-darkest">Gabinete Histórico</option>
+                <option value="PRENSA" class="bg-ammun-darkest">Comité de Prensa</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase font-semibold text-ammun-soft tracking-wider mb-2">Motivación de Participación</label>
+            <textarea rows="3" placeholder="Describe brevemente por qué deseas participar en AMMUN 2026..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-ammun-soft text-sm transition"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-ammun-soft hover:bg-white text-ammun-darkest font-extrabold text-base transition duration-300 shadow-xl flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Postulación
+          </button>
+        </form>
+
+        <!-- Form Confirmation Message -->
+        <div id="form-confirmation" class="hidden text-center py-8">
+          <div class="w-16 h-16 rounded-full bg-ammun-soft/20 text-ammun-soft border border-ammun-soft/40 flex items-center justify-center text-3xl mx-auto mb-4">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="font-serif-title font-bold text-2xl text-white mb-2">¡Inscripción Recibida!</h3>
+          <p class="text-slate-300 text-sm font-light max-w-md mx-auto mb-6">
+            Hemos registrado tu solicitud para AMMUN 2026. Revisa tu correo electrónico para las siguientes instrucciones académicas.
+          </p>
+          <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl border border-ammun-soft/40 text-ammun-soft hover:text-white hover:bg-white/10 text-xs uppercase tracking-wider font-semibold transition">
+            Realizar otra inscripción
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-ammun-darkest border-t border-ammun-pizzarra/30 py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full bg-slate-900 p-1 border border-ammun-soft/30 flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full text-ammun-soft fill-current">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#8BA2B5" stroke-width="6"/>
+            <ellipse cx="100" cy="100" rx="65" ry="28" fill="none" stroke="#8BA2B5" stroke-width="4"/>
+            <line x1="35" y1="100" x2="165" y2="100" stroke="#8BA2B5" stroke-width="4"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif-title font-bold text-white text-sm block">AMMUN 2026</span>
+          <span class="text-[10px] text-slate-400">I.E. Alberto Mendoza Mayor</span>
+        </div>
+      </div>
+
+      <div class="text-center sm:text-right">
+        <p>&copy; 2026 IV Modelo Institucional de las Naciones Unidas. Todos los derechos reservados.</p>
+        <p class="text-[10px] text-slate-500 mt-1">Liderazgo, Juventud y Diplomacia Transformadora.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Handle Form Submission Simulation
+    function handleRegistration(e) {
+      e.preventDefault();
+      document.getElementById('registration-form').classList.add('hidden');
+      document.getElementById('form-confirmation').classList.remove('hidden');
+    }
+
+    function resetForm() {
+      document.getElementById('registration-form').reset();
+      document.getElementById('registration-form').classList.remove('hidden');
+      document.getElementById('form-confirmation').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
